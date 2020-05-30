@@ -32,9 +32,8 @@ public class Server {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
+
+
 private static class Task implements Callable<Void> {
 		private Socket socket;
 		private OutputStream os;
@@ -96,64 +95,46 @@ private static class Task implements Callable<Void> {
 					exit();
 					return null;
 				case Protocol.TYPE_LOGIN_REQ:
-					//login(protocol);
+					login(protocol);
 					break;
 				case Protocol.TYPE_LOGOUT_REQ:
-					//logout(protocol);
+					logout(protocol);
 					break;
 				case Protocol.TYPE_USER_INFO_REQ:
-					//getStudent(protocol);
-					break;
-				case Protocol.TYPE_LIBRARY_ENROLL_REQ:
-					//getDataPackage(protocol);
-					break;
-				case Protocol.TYPE_LABRARY_UPDATE_REQ:
-					//createDataPackage(protocol);
-					break;
-				case Protocol.TYPE_LABRARY_DELETE_REQ:
-					//updateDataPackage(protocol);
+					//getUserInfo(protocol);
 					break;
 				case Protocol.TYPE_LABRARY_LIST_INFO_REQ:
-					//getRecruitDates(protocol);
+					//getLibraryInfo(protocol);
 					break;
 				case Protocol.TYPE_LABRARY_DETAILS_INFO_REQ:
-					//selectRecruitDate(protocol);
-					break;
-				case Protocol.TYPE_BOOK_ENROLL_REQ:
-					//getSchedules(protocol);
-					break;
-				case Protocol.TYPE_BOOK_DELETE_REQ:
-					//checkSchedule(protocol);
-					break;
-				case Protocol.TYPE_BOOK_INFO_REQ:
-					//getRecruits(protocol);
+					//getLibraryDetailsInfo(protocol);
 					break;
 				case Protocol.TYPE_BOOK_LIST_INFO_REQ:
-					//getSubRecruits(protocol);
+					//getBookInfo(protocol);
 					break;
 				case Protocol.TYPE_BOOK_DETAILS_INFO_REQ:
-					//getSubRecruit(protocol);
+					//getBookDetailsInfo(protocol);
 					break;
 				case Protocol.TYPE_LABRARY_FAVORITEINFO_ENROLL_REQ:
-					//createSubRecruit(protocol);
+					//createLibFavorite(protocol);
 					break;
 				case Protocol.TYPE_LABRARY_FAVORITEINFO_DELETE_REQ:
-					//updateSubRecruit(protocol);
+					//updateLibFavorite(protocol);
 					break;
 				case Protocol.TYPE_LABRARY_FAVORITEINFO_INFO_REQ:
-					//getApplies(protocol);
+					//getLibFavorite(protocol);
 					break;
 				case Protocol.TYPE_BOOK_FAVORITEINFO_ENROLL_REQ:
-					//getApply(protocol);
+					//createBookFavorite(protocol);
 					break;
 				case Protocol.TYPE_BOOK_FAVORITEINFO_DELETE_REQ:
-					//createApply(protocol);
+					//updateBookFavorite(protocol);
 					break;
 				case Protocol.TYPE_BOOK_FAVORITEINFO_INFO_REQ:
-					//updateApply(protocol);
+					//getBookFavorite(protocol);
 					break;
 				case Protocol.TYPE_BOOK_BORROW_POSSIBILITY_REQ:
-					//getSelections(protocol);
+					//getBookPossibility(protocol);
 					break;
 				}
 			}
@@ -207,11 +188,39 @@ private static class Task implements Callable<Void> {
 	private void login(Protocol rcvData) throws IOException, SQLException, Exception {
 		String[] str = (String[]) rcvData.getBody();
 		Mysql mysql = Mysql.getConnection();
-		mysql.sql("SELECT `아이디`, `성명`, `패스워드`, '관리자' AS 권한 FROM `관리자` WHERE `아이디` = ? UNION SELECT `학번` as 아이디, `성명`, `패스워드`, '학생' AS 권한 FROM `학생` WHERE `학번`= ? LIMIT 1");
+		mysql.sql("SELECT `아이디`, `패스워드`, `이름` FROM `유저` WHERE `아이디` = ?");
 		mysql.set(1, str[0]);
 		ResultSet rs = mysql.select();
+		Protocol sndData = new Protocol(Protocol.TYPE_LOGIN_RES);
+		
+		if (rs.next() && rs.getString("패스워드").equals(str[0])) //아이디가 존재하고 패스워드도 일치할 경우 
+		{
+			this.userID = rs.getString("아이디");
+			sndData.setCode(1);
+			sndData.setBody(null);
+		}
+		else
+		{
+			sndData.setCode(0);
+			sndData.setBody(null);
+		}
+		
+		os.write(sndData.getPacket());
+	}
+	
+	private void logout(Protocol rcvData) throws IOException, SQLException, Exception {
+		this.userID = "";
+		Protocol sndData = new Protocol(Protocol.TYPE_LOGOUT_RES, 1);
+		os.write(sndData.getPacket());	
 	}
 	
 	
+	
+	private void getLibraryInfo(Protocol rcvData)throws IOException, SQLException, Exception {
+		
+		
+		
+	}
 
+}
 }
