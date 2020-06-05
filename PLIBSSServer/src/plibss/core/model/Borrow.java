@@ -9,6 +9,16 @@ public class Borrow implements Serializable{
 	private LocalDateTime startTime;
 	private LocalDateTime returnTime;
 	private String state;
+
+	public Borrow(String userid, String bname, String lid, LocalDateTime startTime, LocalDateTime returnTime, String state) {
+		this.userid = userid;
+		Bname = bname;
+		Lid = lid;
+		this.startTime = startTime;
+		this.returnTime = returnTime;
+		this.state = state;
+	}
+
 	public String getUserid() {
 		return userid;
 	}

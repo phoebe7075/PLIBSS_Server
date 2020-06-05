@@ -14,6 +14,10 @@ public class Book implements Serializable{
 	public String getBname() {
 		return Bname;
 	}
+	public Book(String bn,String lid,String authorn,String kw,int y,String kd,String is)
+	{
+		this.Bname = bn; this.Lid=lid; this.authorn=authorn; this.keyword=kw; this.kdc=kd;this.isbn=is;
+	}
 	public void setBname(String bname) {
 		Bname = bname;
 	}

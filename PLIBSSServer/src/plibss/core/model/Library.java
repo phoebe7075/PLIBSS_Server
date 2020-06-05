@@ -20,7 +20,27 @@ public class Library implements Serializable {
 	private int borrowday;
 	private int borrownum;
 	private int readingseat;
-	
+
+	public Library(String lid, String lname, String cname, String districtname, String ltype, String homepage, String lphnum, String holidayEndTime, String holidayStartTime, String saturdayEndTime, String saturdayStartTime, String weekdayEndTime, String weekdayStartTime, String closedDay, int borrowday, int borrownum, int readingseat) {
+		Lid = lid;
+		Lname = lname;
+		Cname = cname;
+		Districtname = districtname;
+		Ltype = ltype;
+		Homepage = homepage;
+		Lphnum = lphnum;
+		HolidayEndTime = holidayEndTime;
+		HolidayStartTime = holidayStartTime;
+		SaturdayEndTime = saturdayEndTime;
+		SaturdayStartTime = saturdayStartTime;
+		WeekdayEndTime = weekdayEndTime;
+		WeekdayStartTime = weekdayStartTime;
+		ClosedDay = closedDay;
+		this.borrowday = borrowday;
+		this.borrownum = borrownum;
+		this.readingseat = readingseat;
+	}
+
 	public String getLid() {
 		return Lid;
 	}

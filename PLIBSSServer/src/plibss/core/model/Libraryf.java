@@ -5,6 +5,11 @@ import java.io.Serializable;
 public class Libraryf implements Serializable{
 	private String userid;
 	private String Lid;
+
+	public Libraryf(String userid, String lid) {
+		this.userid = userid;
+		Lid = lid;
+	}
 	public String getUserid() {
 		return userid;
 	}

@@ -13,79 +13,79 @@ public class Protocol {
 	public static final int LEN_CODE = 1;
 	public static final int LEN_BODYLENGTH = 2;
 	public static final int LEN_HEADER = 4; // 4 Byte
-	public static final int LEN_MAX = 50000; // ÃÖ´ë µ¥ÀÌÅÍ ±æÀÌ
-	
-	public static final int TYPE_ERROR = -1; // ¿À·ù ÀÀ´ä
-	public static final int TYPE_UNDEFINED = 0; // ÇÁ·ÎÅäÄÝÀÌ ÁöÁ¤µÇ¾î ÀÖÁö ¾ÊÀº °æ¿ì
-	public static final int TYPE_EXIT = 1; // ÇÁ·Î±×·¥ Á¾·á
-	public static final int TYPE_LOGIN_REQ = 2; // ·Î±×ÀÎ ¿äÃ»
-	public static final int TYPE_LOGIN_RES = 3; // ·Î±×ÀÎ ÀÀ´ä
-	public static final int TYPE_LOGOUT_REQ = 4; // ·Î±×¾Æ¿ô ¿äÃ»
-	public static final int TYPE_LOGOUT_RES = 5; // ·Î±×ÀÎ ÀÀ´ä
-	public static final int TYPE_USER_INFO_REQ = 6; // È¸¿øÁ¤º¸ ¿äÃ» (´ÜÀÏ, ÀÚ±âÀÚ½Å)
-	public static final int TYPE_USER_INFO_RES = 7; // È¸¿øÁ¤º¸ ÀÀ´ä (´ÜÀÏ, ÀÚ±âÀÚ½Å)
-	
-	public static final int TYPE_LIBRARY_ENROLL_REQ = 8;  // µµ¼­°ü Á¤º¸ µî·Ï ¿äÃ»
-	public static final int TYPE_LIBRARY_ENROLL_RES = 9;  // µµ¼­°ü Á¤º¸ µî·Ï ÀÀ´ä
-	public static final int TYPE_LABRARY_UPDATE_REQ = 10;  // µµ¼­°ü Á¤º¸ ¼öÁ¤ ¿äÃ»
-	public static final int TYPE_LABRARY_UPDATE_RES = 11;  // µµ¼­°ü Á¤º¸ ¼öÁ¤ ÀÀ´ä
-	public static final int TYPE_LABRARY_DELETE_REQ = 12;  // µµ¼­°ü Á¤º¸ »èÁ¦ ¿äÃ»
-	public static final int TYPE_LABRARY_DELETE_RES = 13;  // µµ¼­°ü Á¤º¸ »èÁ¦ ÀÀ´ä
-	public static final int TYPE_LABRARY_LIST_INFO_REQ = 14;  // µµ¼­°ü ¸ñ·Ï Á¶È¸ ¿äÃ»
-	public static final int TYPE_LABRARY_LIST_INFO_RES = 15;  // µµ¼­°ü ¸ñ·Ï Á¶È¸ ÀÀ´ä
-	public static final int TYPE_LABRARY_DETAILS_INFO_REQ = 16;  // µµ¼­°ü ¼¼ºÎÁ¤º¸ Á¶È¸ ¿äÃ»
-	public static final int TYPE_LABRARY_DETAILS_INFO_RES = 17;  // µµ¼­°ü ¼¼ºÎÁ¤º¸ Á¶È¸ ÀÀ´ä
-	
-	public static final int TYPE_BOOK_ENROLL_REQ = 18; // µµ¼­ Á¤º¸ µî·Ï ¿äÃ»
-	public static final int TYPE_BOOK_ENROLL_RES = 19; // µµ¼­ Á¤º¸ µî·Ï ÀÀ´ä
-	public static final int TYPE_BOOK_DELETE_REQ = 20; // µµ¼­ Á¤º¸ »èÁ¦ ¿äÃ»
-	public static final int TYPE_BOOK_DELETE_RES = 21; // µµ¼­ Á¤º¸ »èÁ¦ ÀÀ´ä
-	public static final int TYPE_BOOK_INFO_REQ = 22; // µµ¼­ Á¤º¸ Á¶È¸ ¿äÃ»
-	public static final int TYPE_BOOK_INFO_RES = 23; // µµ¼­ Á¤º¸ Á¶È¸ ÀÀ´ä
-	public static final int TYPE_BOOK_LIST_INFO_REQ = 24; // µµ¼­ ¸ñ·Ï Á¶È¸ ¿äÃ»
-	public static final int TYPE_BOOK_LIST_INFO_RES = 25; // µµ¼­ ¸ñ·Ï Á¶È¸ ÀÀ´ä
-	public static final int TYPE_BOOK_DETAILS_INFO_REQ = 26; // µµ¼­ ¼¼ºÎÁ¤º¸ Á¶È¸ ¿äÃ»
-	public static final int TYPE_BOOK_DETALES_INFO_RES = 27; // µµ¼­ ¼¼ºÎÁ¤º¸ Á¶È¸ ÀÀ´ä
-	
-	public static final int TYPE_LABRARY_FAVORITEINFO_ENROLL_REQ = 28; // µµ¼­°ü Áñ°ÜÃ£±â Á¤º¸ µî·Ï ¿äÃ»
-	public static final int TYPE_LABRARY_FAVORITEINFO_ENROLL_RES = 29; // µµ¼­°ü Áñ°ÜÃ£±â Á¤º¸ µî·Ï ÀÀ´ä
-	public static final int TYPE_LABRARY_FAVORITEINFO_DELETE_REQ = 30; // µµ¼­°ü Áñ°ÜÃ£±â Á¤º¸ »èÁ¦ ¿äÃ»
-	public static final int TYPE_LABRARY_FAVORITEINFO_DELETE_RES = 31; // µµ¼­°ü Áñ°ÜÃ£±â Á¤º¸ »èÁ¦ ÀÀ´ä
-	public static final int TYPE_LABRARY_FAVORITEINFO_INFO_REQ = 32; // µµ¼­°ü Áñ°ÜÃ£±â Á¤º¸ Á¶È¸ ¿äÃ»
-	public static final int TYPE_LABRARY_FAVORITEINFO_INFO_RES = 33; // µµ¼­°ü Áñ°ÜÃ£±â Á¤º¸ Á¶È¸ ÀÀ´ä
-	public static final int TYPE_BOOK_FAVORITEINFO_ENROLL_REQ = 34; // µµ¼­ Áñ°ÜÃ£±â Á¤º¸ µî·Ï ¿äÃ»
-	public static final int TYPE_BOOK_FAVORITEINFO_ENROLL_RES = 35; // µµ¼­ Áñ°ÜÃ£±â Á¤º¸ µî·Ï ÀÀ´ä
-	public static final int TYPE_BOOK_FAVORITEINFO_DELETE_REQ = 36; // µµ¼­ Áñ°ÜÃ£±â Á¤º¸ »èÁ¦ ¿äÃ»
-	public static final int TYPE_BOOK_FAVORITEINFO_DELETE_RES = 37; // µµ¼­ Áñ°ÜÃ£±â Á¤º¸ »èÁ¦ ÀÀ´ä
-	public static final int TYPE_BOOK_FAVORITEINFO_INFO_REQ = 38; // µµ¼­ Áñ°ÜÃ£±â Á¤º¸ Á¶È¸ ¿äÃ»
-	public static final int TYPE_BOOK_FAVORITEINFO_INFO_RES = 39; // µµ¼­ Áñ°ÜÃ£±â Á¤º¸ Á¶È¸ ÀÀ´ä
-	
-	public static final int TYPE_BOOK_BORROW_POSSIBILITY_REQ = 40; // µµ¼­ ´ëÃâ°¡´É ¾Ë¸² ¿äÃ»
-	public static final int TYPE_BOOK_BORROW_POSSIBILITY_RES = 41; // µµ¼­ ´ëÃâ°¡´É ¾Ë¸² ÀÀ´ä
-	
-	
-	
+	public static final int LEN_MAX = 50000; // ìµœëŒ€ ë°ì´í„° ê¸¸ì´
+
+	public static final int TYPE_ERROR = -1; // ì˜¤ë¥˜ ì‘ë‹µ
+	public static final int TYPE_UNDEFINED = 0; // í”„ë¡œí† ì½œì´ ì§€ì •ë˜ì–´ ìžˆì§€ ì•Šì€ ê²½ìš°
+	public static final int TYPE_EXIT = 1; // í”„ë¡œê·¸ëž¨ ì¢…ë£Œ
+	public static final int TYPE_LOGIN_REQ = 2; // ë¡œê·¸ì¸ ìš”ì²­
+	public static final int TYPE_LOGIN_RES = 3; // ë¡œê·¸ì¸ ì‘ë‹µ
+	public static final int TYPE_LOGOUT_REQ = 4; // ë¡œê·¸ì•„ì›ƒ ìš”ì²­
+	public static final int TYPE_LOGOUT_RES = 5; // ë¡œê·¸ì¸ ì‘ë‹µ
+	public static final int TYPE_USER_INFO_REQ = 6; // íšŒì›ì •ë³´ ìš”ì²­ (ë‹¨ì¼, ìžê¸°ìžì‹ )
+	public static final int TYPE_USER_INFO_RES = 7; // íšŒì›ì •ë³´ ì‘ë‹µ (ë‹¨ì¼, ìžê¸°ìžì‹ )
+
+	public static final int TYPE_LIBRARY_ENROLL_REQ = 8;  // ë„ì„œê´€ ì •ë³´ ë“±ë¡ ìš”ì²­
+	public static final int TYPE_LIBRARY_ENROLL_RES = 9;  // ë„ì„œê´€ ì •ë³´ ë“±ë¡ ì‘ë‹µ
+	public static final int TYPE_LABRARY_UPDATE_REQ = 10;  // ë„ì„œê´€ ì •ë³´ ìˆ˜ì • ìš”ì²­
+	public static final int TYPE_LABRARY_UPDATE_RES = 11;  // ë„ì„œê´€ ì •ë³´ ìˆ˜ì • ì‘ë‹µ
+	public static final int TYPE_LABRARY_DELETE_REQ = 12;  // ë„ì„œê´€ ì •ë³´ ì‚­ì œ ìš”ì²­
+	public static final int TYPE_LABRARY_DELETE_RES = 13;  // ë„ì„œê´€ ì •ë³´ ì‚­ì œ ì‘ë‹µ
+	public static final int TYPE_LABRARY_LIST_INFO_REQ = 14;  // ë„ì„œê´€ ëª©ë¡ ì¡°íšŒ ìš”ì²­
+	public static final int TYPE_LABRARY_LIST_INFO_RES = 15;  // ë„ì„œê´€ ëª©ë¡ ì¡°íšŒ ì‘ë‹µ
+	public static final int TYPE_LABRARY_DETAILS_INFO_REQ = 16;  // ë„ì„œê´€ ì„¸ë¶€ì •ë³´ ì¡°íšŒ ìš”ì²­
+	public static final int TYPE_LABRARY_DETAILS_INFO_RES = 17;  // ë„ì„œê´€ ì„¸ë¶€ì •ë³´ ì¡°íšŒ ì‘ë‹µ
+
+	public static final int TYPE_BOOK_ENROLL_REQ = 18; // ë„ì„œ ì •ë³´ ë“±ë¡ ìš”ì²­
+	public static final int TYPE_BOOK_ENROLL_RES = 19; // ë„ì„œ ì •ë³´ ë“±ë¡ ì‘ë‹µ
+	public static final int TYPE_BOOK_DELETE_REQ = 20; // ë„ì„œ ì •ë³´ ì‚­ì œ ìš”ì²­
+	public static final int TYPE_BOOK_DELETE_RES = 21; // ë„ì„œ ì •ë³´ ì‚­ì œ ì‘ë‹µ
+	public static final int TYPE_BOOK_UPDATE_REQ = 22; // ë„ì„œ ì •ë³´ ìˆ˜ì • ìš”ì²­
+	public static final int TYPE_BOOK_UPDATE_RES = 23; // ë„ì„œ ì •ë³´ ìˆ˜ì • ì‘ë‹µ
+	public static final int TYPE_BOOK_LIST_INFO_REQ = 24; // ë„ì„œ ëª©ë¡ ì¡°íšŒ ìš”ì²­
+	public static final int TYPE_BOOK_LIST_INFO_RES = 25; // ë„ì„œ ëª©ë¡ ì¡°íšŒ ì‘ë‹µ
+	public static final int TYPE_BOOK_DETAILS_INFO_REQ = 26; // ë„ì„œ ì„¸ë¶€ì •ë³´ ì¡°íšŒ ìš”ì²­
+	public static final int TYPE_BOOK_DETALES_INFO_RES = 27; // ë„ì„œ ì„¸ë¶€ì •ë³´ ì¡°íšŒ ì‘ë‹µ
+
+	public static final int TYPE_LABRARY_FAVORITEINFO_ENROLL_REQ = 28; // ë„ì„œê´€ ì¦ê²¨ì°¾ê¸° ì •ë³´ ë“±ë¡ ìš”ì²­
+	public static final int TYPE_LABRARY_FAVORITEINFO_ENROLL_RES = 29; // ë„ì„œê´€ ì¦ê²¨ì°¾ê¸° ì •ë³´ ë“±ë¡ ì‘ë‹µ
+	public static final int TYPE_LABRARY_FAVORITEINFO_DELETE_REQ = 30; // ë„ì„œê´€ ì¦ê²¨ì°¾ê¸° ì •ë³´ ì‚­ì œ ìš”ì²­
+	public static final int TYPE_LABRARY_FAVORITEINFO_DELETE_RES = 31; // ë„ì„œê´€ ì¦ê²¨ì°¾ê¸° ì •ë³´ ì‚­ì œ ì‘ë‹µ
+	public static final int TYPE_LABRARY_FAVORITEINFO_INFO_REQ = 32; // ë„ì„œê´€ ì¦ê²¨ì°¾ê¸° ì •ë³´ ì¡°íšŒ ìš”ì²­
+	public static final int TYPE_LABRARY_FAVORITEINFO_INFO_RES = 33; // ë„ì„œê´€ ì¦ê²¨ì°¾ê¸° ì •ë³´ ì¡°íšŒ ì‘ë‹µ
+	public static final int TYPE_BOOK_FAVORITEINFO_ENROLL_REQ = 34; // ë„ì„œ ì¦ê²¨ì°¾ê¸° ì •ë³´ ë“±ë¡ ìš”ì²­
+	public static final int TYPE_BOOK_FAVORITEINFO_ENROLL_RES = 35; // ë„ì„œ ì¦ê²¨ì°¾ê¸° ì •ë³´ ë“±ë¡ ì‘ë‹µ
+	public static final int TYPE_BOOK_FAVORITEINFO_DELETE_REQ = 36; // ë„ì„œ ì¦ê²¨ì°¾ê¸° ì •ë³´ ì‚­ì œ ìš”ì²­
+	public static final int TYPE_BOOK_FAVORITEINFO_DELETE_RES = 37; // ë„ì„œ ì¦ê²¨ì°¾ê¸° ì •ë³´ ì‚­ì œ ì‘ë‹µ
+	public static final int TYPE_BOOK_FAVORITEINFO_INFO_REQ = 38; // ë„ì„œ ì¦ê²¨ì°¾ê¸° ì •ë³´ ì¡°íšŒ ìš”ì²­
+	public static final int TYPE_BOOK_FAVORITEINFO_INFO_RES = 39; // ë„ì„œ ì¦ê²¨ì°¾ê¸° ì •ë³´ ì¡°íšŒ ì‘ë‹µ
+
+	public static final int TYPE_BOOK_BORROW_POSSIBILITY_REQ = 40; // ë„ì„œ ëŒ€ì¶œê°€ëŠ¥ ì•Œë¦¼ ìš”ì²­
+	public static final int TYPE_BOOK_BORROW_POSSIBILITY_RES = 41; // ë„ì„œ ëŒ€ì¶œê°€ëŠ¥ ì•Œë¦¼ ì‘ë‹µ
+
+
+
 	private byte type;
 	private byte code;
 	private short bodyLength;
-	
-	private byte[] body; // Á÷·ÄÈ­ ÇÏ¿© ÀúÀå
-	
+
+	private byte[] body; // ì§ë ¬í™” í•˜ì—¬ ì €ìž¥
+
 	public Protocol() {
 		this(TYPE_UNDEFINED, 0);
 	}
-	
+
 	public Protocol(int type) {
 		this(type, 0);
 	}
-	
+
 	public Protocol(int type, int code) {
 		setType(type);
 		setCode(code);
 		setBodyLength(0);
 	}
-	
-	
+
+
 	public byte getType() {
 		return type;
 	}
@@ -106,21 +106,21 @@ public class Protocol {
 		return bodyLength;
 	}
 
-	private void setBodyLength(int bodyLength) { // Body Length´Â Á÷Á¢ ¼³Á¤ÇÒ ¼ö ¾øÀ½
+	private void setBodyLength(int bodyLength) { // Body LengthëŠ” ì§ì ‘ ì„¤ì •í•  ìˆ˜ ì—†ìŒ
 		this.bodyLength = (short) bodyLength;
 	}
-	
+
 	public Object getBody() {
 		return deserialize(body);
 	}
-	
+
 	public void setBody(Object body) {
 		byte[] serializedObject = serialize(body);
 		this.body = serializedObject;
 		setBodyLength(serializedObject.length);
 	}
 
-	public byte[] getPacket() { // ÇöÀç header¿Í body·Î ÆÐÅ¶À» »ý¼ºÇÏ¿© ¸®ÅÏ
+	public byte[] getPacket() { // í˜„ìž¬ headerì™€ bodyë¡œ íŒ¨í‚·ì„ ìƒì„±í•˜ì—¬ ë¦¬í„´
 		byte[] packet = new byte[LEN_HEADER + getBodyLength()];
 
 		packet[0] = getType();
@@ -134,7 +134,7 @@ public class Protocol {
 		return packet;
 	}
 
-	public void setPacketHeader(byte[] packet) { // ¸Å°³ º¯¼ö packetÀ» ÅëÇØ header¸¸ »ý¼º
+	public void setPacketHeader(byte[] packet) { // ë§¤ê°œ ë³€ìˆ˜ packetì„ í†µí•´ headerë§Œ ìƒì„±
 		byte[] data;
 
 		setType(packet[0]);
@@ -144,8 +144,8 @@ public class Protocol {
 		System.arraycopy(packet, LEN_TYPE + LEN_CODE, data, 0, LEN_BODYLENGTH);
 		setBodyLength(byteToShort(data));
 	}
-	
-	public void setPacketBody(byte[] packet) { // ¸Å°³ º¯¼ö packetÀ» ÅëÇØ body¸¦ »ý¼º
+
+	public void setPacketBody(byte[] packet) { // ë§¤ê°œ ë³€ìˆ˜ packetì„ í†µí•´ bodyë¥¼ ìƒì„±
 		byte[] data;
 
 		if (getBodyLength() > 0) {
@@ -153,7 +153,7 @@ public class Protocol {
 			System.arraycopy(packet, 0, data, 0, getBodyLength());
 			if (getType() == 121 || getType() == 124)
 				setBody(data);
-			else 
+			else
 				setBody(deserialize(data));
 		}
 	}
@@ -181,7 +181,7 @@ public class Protocol {
 			return null;
 		}
 	}
-	
+
 	private byte[] shortToByte(short s) {
 		return ByteBuffer.allocate(Short.SIZE / 8).putShort(s).array();
 	}

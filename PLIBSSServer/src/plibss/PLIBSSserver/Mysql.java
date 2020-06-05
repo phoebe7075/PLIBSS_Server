@@ -19,7 +19,8 @@ public class Mysql {
 	private Mysql()	throws SQLException {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://reldn.ipdisk.co.kr/dmstest?useSSL=false", "admin", "1q2w3e4r!!");
+			//conn = DriverManager.getConnection("jdbc:mysql://reldn.ipdisk.co.kr/dmstest?useSSL=false", "sharedb", "qwer1234!");
+			conn = DriverManager.getConnection("jdbc:mysql://192.168.0.2:3306/sharedb?useSSL=false", "sharedb", "qwer1234!");
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();

@@ -4,6 +4,10 @@ public class Bookf implements Serializable{
 	private String userid;
 	private String Lid;
 	private String Bname;
+	public Bookf(String ui,String lid,String bn)
+	{
+		this.userid=ui; this.Lid=lid;this.Bname=bn;
+	}
 	public String getUserid() {
 		return userid;
 	}
